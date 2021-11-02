@@ -45,6 +45,16 @@ public class GreetingController {
 		return greetingService.getAllGreetings();
 	}
 	
+	@PutMapping("/edit/{id}")
+	public Greeting editMessage(@PathVariable Long id,
+			@RequestParam(value = "firstName", defaultValue = "") String firstName,
+			@RequestParam(value = "lastName", defaultValue = "") String lastName) {
+		User user = new User();
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
+		return greetingService.editGreeting(id, user);
+	}
+	
 	@GetMapping("/query")
     public Greeting greetingQuery(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
