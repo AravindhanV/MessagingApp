@@ -34,6 +34,11 @@ public class GreetingController {
 		return greetingService.addGreeting(user);
 	}
 	
+	@GetMapping("/get/{id}")
+	public String getMessageById(@PathVariable Long id) {
+		return greetingService.getGreetingById(id).getUserName();
+	}
+	
 	@GetMapping("/query")
     public Greeting greetingQuery(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
