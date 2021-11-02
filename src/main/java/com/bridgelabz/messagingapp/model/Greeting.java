@@ -2,21 +2,21 @@ package com.bridgelabz.messagingapp.model;
 
 public class Greeting {
 
-	private long UserId;
+	private long userId;
 	private String userName;
 
 	public Greeting(long userId, String userName) {
 		super();
-		UserId = userId;
+		this.userId = userId;
 		this.userName = userName;
 	}
 
 	public long getUserId() {
-		return UserId;
+		return userId;
 	}
 
 	public void setUserId(long userId) {
-		UserId = userId;
+		this.userId = userId;
 	}
 
 
