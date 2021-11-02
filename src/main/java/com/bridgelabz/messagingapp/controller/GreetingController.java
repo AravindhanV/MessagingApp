@@ -49,7 +49,7 @@ public class GreetingController {
     }
 
 	@PutMapping("/put/{firstName}")
-    public Greeting greeting(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
+    public Greeting greetingPut(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
         return new Greeting(counter.incrementAndGet(), String.format(template, firstName + " " + lastName));
     }
 }

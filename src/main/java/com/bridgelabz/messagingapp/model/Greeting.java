@@ -1,9 +1,19 @@
 package com.bridgelabz.messagingapp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="GREETINGS")
 public class Greeting {
 
 	private long userId;
 	private String userName;
+	
+	public Greeting() {
+		userId = 0;
+		userName = "";
+	}
 
 	public Greeting(long userId, String userName) {
 		super();
